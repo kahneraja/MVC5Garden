@@ -231,6 +231,10 @@ namespace MVC5Garden.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
+            // Notes on access a given users email address via claims.
+            // var result = await AuthenticationManager.AuthenticateAsync(DefaultAuthenticationTypes.ExternalCookie);
+            // var email = result.Identity.Claims.Where(x => x.Type == ClaimTypes.Email).FirstOrDefault();
+
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
             if (loginInfo == null)
             {

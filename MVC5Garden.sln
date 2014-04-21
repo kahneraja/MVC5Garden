@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC5Garden", "MVC5Garden\MV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC5Garden.Tests", "MVC5Garden.Tests\MVC5Garden.Tests.csproj", "{A48709A4-AAF6-4D0F-8787-BB9F6A059C96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi2Project", "WebApi2Project\WebApi2Project.csproj", "{3C030A85-B7F7-427C-8193-964210EBF012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi2Project.Tests", "WebApi2Project.Tests\WebApi2Project.Tests.csproj", "{1A91AFB7-2FB1-437A-86B8-C0273026A201}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{A48709A4-AAF6-4D0F-8787-BB9F6A059C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A48709A4-AAF6-4D0F-8787-BB9F6A059C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A48709A4-AAF6-4D0F-8787-BB9F6A059C96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C030A85-B7F7-427C-8193-964210EBF012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C030A85-B7F7-427C-8193-964210EBF012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C030A85-B7F7-427C-8193-964210EBF012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C030A85-B7F7-427C-8193-964210EBF012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A91AFB7-2FB1-437A-86B8-C0273026A201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A91AFB7-2FB1-437A-86B8-C0273026A201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A91AFB7-2FB1-437A-86B8-C0273026A201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A91AFB7-2FB1-437A-86B8-C0273026A201}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

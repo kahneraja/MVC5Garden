@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function () {
+            
+           
+
+            var getValues = function () {
+                var url = "/api/values";
+
+                // $.get(url).always(showResponse);
+
+                $.ajax(url, {
+                    type: "GET",
+                    headers: getHeaders(),
+
+                }).always(showResponse);
+                return false;
+            };
+
+            var showResponse = function (response) {
+                $('#preOutput').text(JSON.stringify(response, null, 4));
+            };
+
+            var register = function () {
+                var registerUrl = "api/account/register";
+
+                var data = $('#registerData').serialize();
+                $.post(registerUrl, data).always(showResponse);
+
+                return false;
+
+            };
+
+            var accessToken = "";
+            var saveAccessToken = function (data) {
+                accessToken = data.access_token;
+            };
+
+            var login = function () {
+                var loginUrl = "/Token"
+
+                var data = $('#registerData').serialize();
+
+                $.post(loginUrl, data)
+                    .success(saveAccessToken)
+                    .always(showResponse);
+
+                return false;
+            };
+
+            var getHeaders = function ()
+            {
+                if (accessToken)
+                {
+                    return { "Authorization": "Bearer " + accessToken };
+                }
+            };
+
+
+            $('#btnGetValues').click(getValues);
+
+            $('#btnRegister').click(register);
+
+            $('#btnLogin').click(login);
+        });
+
+    </script>
+</head>
+<body>
+    <!-- A simple html page. Something to help test.  -->
+    <h3>Values Requests</h3>
+    <form id="registerData">
+        <input name="userName" type="text" placeholder="userName"/>
+        <input name="password" type="password" placeholder="password" />
+        <input name="confirmPassword" type="password" placeholder="confirmPassword" />
+        <button type="submit" id="btnRegister">Register</button>
+        <hr />
+        <input name="grant_type" type="hidden" value="password" />
+        <button type="submit" id="btnLogin">Login</button>
+    </form>
+    <hr />
+    <button id="btnGetValues">Get Values</button>
+    <pre id="preOutput"></pre>
+</body>
+</html>
